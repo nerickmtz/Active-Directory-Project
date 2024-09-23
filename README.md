@@ -308,7 +308,7 @@ Account Name: The login was for the user bstevens on the Target-PC.
 EventCode: 4624 (Logon Success)
 Keywords: Audit Success — This shows that the authentication was successful, confirming that the brute force attack succeeded.
 Screenshot of the Search Results
-The screenshot below shows the Event ID 4624 results in Splunk, confirming that the bstevens account was successfully accessed from the Kali Linux machine:
+The screenshot above shows the Event ID 4624 results in Splunk, confirming that the bstevens account was successfully accessed from the Kali Linux machine:
 
 Event ID 4624: Represents a successful login in Windows security logs.
 Account Name: bstevens — The account that was targeted and successfully compromised in the brute force attack.
