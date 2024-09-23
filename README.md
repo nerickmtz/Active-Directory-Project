@@ -267,11 +267,76 @@ After configuring all the machines in the lab, I used **Kali Linux** to simulate
 
    ![14](https://github.com/user-attachments/assets/52a36e48-b2b2-45ff-939f-002a0b67deaf)
 
-### Command Used for the Attack
+## Detecting Brute Force Attack Using Splunk
 
-The following command was executed in Kali Linux using the **crowbar** tool:
+After executing the brute force attack using **crowbar** from Kali Linux, I utilized **Splunk** to detect the attack based on failed login attempts. The **Windows Event ID 4625** (Login Failed) was used to identify unsuccessful authentication attempts for the **bstevens** account on **Target-PC**.
 
-```bash
-crowbar -b rdp -u bstevens -c passwords.txt -s 192.168.10.100/32
+Below is the screenshot of the result 
 
+![15](https://github.com/user-attachments/assets/060728d4-3d72-4d75-92a6-495b3f999e22)
+
+Key Findings
+A total of 22 failed login attempts (Event ID 4625) were recorded for the bstevens account.
+
+These events occurred almost simultaneously, indicating a brute force attack, where multiple login attempts with incorrect credentials were made in rapid succession.
+
+The EventCode 4625 represents failed login attempts. Below is a detailed view of the event count:
+
+EventCode: 4625 (Login failed)
+Count: 22 failed login attempts
+Account: bstevens
+Screenshot of the Search Results
+The screenshot above shows the Event ID 4625 results in Splunk, with a total of 22 failed login attempts for the bstevens account
+
+Event ID 4625: Represents a failed login attempt in Windows security logs.
+Account Name: bstevens — The user account targeted by the brute force attack.
+Host: The attack was attempted on the Target-PC.
+The spike in failed login events is characteristic of a brute force attack, where an attacker tries different password combinations to gain unauthorized access.
+
+By analyzing Event ID 4625 in Splunk, I was able to successfully detect a brute force attack targeting the bstevens account. This demonstrates the effectiveness of log monitoring for detecting malicious activities. Setting up alerts for patterns like multiple failed logins in a short timeframe can significantly enhance the security monitoring capabilities of a system.
+
+## Detecting Successful Brute Force Attack Using Splunk
+
+After monitoring the failed login attempts with **Event ID 4625**, I also detected a successful login event that resulted from the brute force attack. This event is represented by **Event ID 4624** (Successful Logon), which indicates a successful login to the **Target-PC** using the **bstevens** account from the Kali Linux machine.
+
+![16](https://github.com/user-attachments/assets/76d1a047-3a38-46de-a3a9-34454a84f52b)
+
+Key Findings
+Event ID 4624: Indicates a successful login attempt.
+Source IP: The source of the login came from the Kali Linux machine with the IP address 192.168.10.250.
+Account Name: The login was for the user bstevens on the Target-PC.
+EventCode: 4624 (Logon Success)
+Keywords: Audit Success — This shows that the authentication was successful, confirming that the brute force attack succeeded.
+Screenshot of the Search Results
+The screenshot below shows the Event ID 4624 results in Splunk, confirming that the bstevens account was successfully accessed from the Kali Linux machine:
+
+Event ID 4624: Represents a successful login in Windows security logs.
+Account Name: bstevens — The account that was targeted and successfully compromised in the brute force attack.
+Source IP Address: 192.168.10.250, which corresponds to the Kali Linux machine used in the brute force attack.
+The successful login following the failed attempts confirms the brute force attack’s success.
+
+By analyzing Event ID 4624 in Splunk, I was able to confirm that the brute force attack against the bstevens account was successful. The login attempt originated from the Kali Linux machine, demonstrating the effectiveness of monitoring logon success and failure events to detect potential security breaches.
+
+## Conclusion
+
+Through this project, I gained hands-on experience in building and configuring a fully functional detection lab, simulating real-world cyber attack scenarios, and detecting them using Splunk. Below are some key takeaways:
+
+1. **SIEM Implementation**: 
+   - I learned how to set up a **Splunk** server and configure **Universal Forwarders** to collect logs from different systems. This gave me a deeper understanding of log collection, indexing, and searching through Splunk.
+
+2. **Log Analysis and Monitoring**:
+   - I developed the skills to monitor and analyze logs, including **Windows Event Logs** such as **Event ID 4625** (Failed Logins) and **Event ID 4624** (Successful Logins). This helped me understand the importance of monitoring critical security events for detecting malicious activities like brute force attacks.
+
+3. **Attack Simulation**:
+   - By simulating a **brute force attack** using **Kali Linux** and tools like **crowbar**, I gained insight into how attackers exploit weak passwords to gain unauthorized access. This practical simulation helped solidify my understanding of common attack techniques and how to detect them using security monitoring tools.
+
+4. **Security Best Practices**:
+   - I reinforced my knowledge of the importance of enforcing **strong password policies**, **account lockout mechanisms**, and **multi-factor authentication (MFA)** to mitigate the risks posed by brute force attacks and other credential-based attacks.
+
+5. **Troubleshooting and Research**:
+   - Throughout the project, I enhanced my troubleshooting and researching skills by identifying and resolving configuration issues, researching different solutions for log forwarding, and optimizing the detection environment.
+
+### Overall Takeaway
+
+This project allowed me to build a comprehensive understanding of both the offensive and defensive sides of cybersecurity. From setting up a simulated attack environment to successfully detecting and analyzing security events in Splunk, I now have a clearer view of how crucial log monitoring and incident response are in real-world cybersecurity operations. The ability to detect and respond to threats efficiently is key to maintaining a secure network environment, and this project gave me valuable experience in achieving that goal.
 
