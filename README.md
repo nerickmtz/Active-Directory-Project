@@ -44,14 +44,15 @@ Each system in this lab was set up for specific purposes:
 
 ## Skills Learned
 
-Throughout this project, I developed and honed several key skills:
+Throughout this project, I was able to develop and improve several key skills:
 
-- **Understanding of SIEM**: Gained proficiency in SIEM concepts and practical applications for log ingestion and analysis.
-- **Log Analysis**: Acquired the ability to analyze and interpret various network and system logs for signs of suspicious or malicious activity.
-- **Attack Pattern Recognition**: Learned to generate and recognize attack signatures, including common techniques used in cyber attacks.
-- **Troubleshooting**: Gained hands-on experience diagnosing and resolving issues in a complex lab environment, from network misconfigurations to service errors.
-- **Researching**: Improved my ability to research and find solutions for technical problems, using a variety of online resources and community forums.
-- **Critical Thinking**: Enhanced my problem-solving skills in identifying and mitigating security threats within a network.
+- **Understanding of SIEM**: I got a solid grasp of **SIEM** concepts and how to use them for log ingestion and analysis. It was exciting to see how these systems work in real scenarios.
+- **Log Analysis**: I learned how to analyze and interpret different network and system logs to spot any signs of suspicious or malicious activity. This was a big eye-opener in understanding how logs tell a story.
+- **Attack Pattern Recognition**: I figured out how to both create and recognize attack signatures. Learning about common cyber attack techniques gave me a good foundation for spotting potential threats.
+- **Troubleshooting**: I gained a lot of experience troubleshooting issues in a pretty complex lab environment, dealing with everything from network misconfigurations to service errors. It was a great way to build up my problem-solving skills.
+- **Researching**: I improved my research skills, especially when it came to finding solutions for technical problems. I spent a lot of time diving into online resources and community forums, which taught me how to look for reliable answers.
+- **Critical Thinking**: This project definitely helped me sharpen my critical thinking skills, especially when it came to identifying and mitigating security threats in a network. Every problem was a new challenge to solve!
+
 
 ## Tools Used
 
@@ -342,27 +343,25 @@ The successful login following the failed attempts confirms the brute force atta
 By analyzing **Event ID 4624** in Splunk, I was able to confirm that the **brute force attack** against the **bstevens** account was successful. The login attempt originated from the **Kali Linux machine**, demonstrating the effectiveness of monitoring **logon success and failure events** to detect potential security breaches.
 
 
-
 ## Conclusion
 
-Through this project, I gained hands-on experience in building and configuring a fully functional detection lab, simulating real-world cyber attack scenarios, and detecting them using Splunk. Below are some key takeaways:
+Through this project, I had the chance to get hands-on experience with setting up a working detection lab, simulating real-world cyber attacks, and detecting them using **Splunk**. Here are some of the main things I learned:
 
-1. **SIEM Implementation**: 
-   - I learned how to set up a **Splunk** server and configure **Universal Forwarders** to collect logs from different systems. This gave me a deeper understanding of log collection, indexing, and searching through Splunk.
+1. **SIEM Implementation**:
+   - I learned how to set up a **Splunk** server and configure **Universal Forwarders** to collect logs from different systems. This was my first time diving into log collection, indexing, and searching, and it gave me a much better understanding of how Splunk works behind the scenes.
 
 2. **Log Analysis and Monitoring**:
-   - I developed the skills to monitor and analyze logs, including **Windows Event Logs** such as **Event ID 4625** (Failed Logins) and **Event ID 4624** (Successful Logins). This helped me understand the importance of monitoring critical security events for detecting malicious activities like brute force attacks.
+   - I developed the ability to monitor and analyze logs, including **Windows Event Logs** like **Event ID 4625** (Failed Logins) and **Event ID 4624** (Successful Logins). It was a great way to see how important it is to monitor these critical events to detect things like brute force attacks.
 
 3. **Attack Simulation**:
-   - By simulating a **brute force attack** using **Kali Linux** and tools like **crowbar**, I gained insight into how attackers exploit weak passwords to gain unauthorized access. This practical simulation helped solidify my understanding of common attack techniques and how to detect them using security monitoring tools.
+   - I simulated a **brute force attack** using **Kali Linux** and tools like **crowbar**. Doing this gave me a real sense of how attackers might exploit weak passwords, and seeing it in action helped me understand how to detect it using tools like Splunk.
 
 4. **Security Best Practices**:
-   - I reinforced my knowledge of the importance of enforcing **strong password policies**, **account lockout mechanisms**, and **multi-factor authentication (MFA)** to mitigate the risks posed by brute force attacks and other credential-based attacks.
+   - I also got a deeper understanding of security best practices, like enforcing **strong password policies**, setting up **account lockout mechanisms**, and using **multi-factor authentication (MFA)**. These practices are essential for preventing brute force attacks and other credential-based threats.
 
 5. **Troubleshooting and Research**:
-   - Throughout the project, I enhanced my troubleshooting and researching skills by identifying and resolving configuration issues, researching different solutions for log forwarding, and optimizing the detection environment.
+   - Throughout the project, I improved my troubleshooting and research skills. Whether it was solving configuration issues or finding solutions for log forwarding, I had to dig deep and figure out how to keep the detection environment running smoothly.
 
 ### Overall Takeaway
 
-This project allowed me to build a comprehensive understanding of both the offensive and defensive sides of cybersecurity. From setting up a simulated attack environment to successfully detecting and analyzing security events in Splunk, I now have a clearer view of how crucial log monitoring and incident response are in real-world cybersecurity operations. The ability to detect and respond to threats efficiently is key to maintaining a secure network environment, and this project gave me valuable experience in achieving that goal.
-
+This project really helped me get a clearer picture of both the offensive and defensive sides of cybersecurity. From setting up a simulated attack to detecting and analyzing security events in **Splunk**, I now see how important log monitoring and incident response are in real-world scenarios. Being able to detect and respond to threats quickly is key to keeping a network secure, and this project gave me a lot of valuable experience in that area.
