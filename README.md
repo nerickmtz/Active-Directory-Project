@@ -275,47 +275,66 @@ Below is the screenshot of the result
 
 ![15](https://github.com/user-attachments/assets/060728d4-3d72-4d75-92a6-495b3f999e22)
 
-Key Findings
-A total of 22 failed login attempts (Event ID 4625) were recorded for the bstevens account.
+# Key Findings
 
-These events occurred almost simultaneously, indicating a brute force attack, where multiple login attempts with incorrect credentials were made in rapid succession.
+A total of **22 failed login attempts** (Event ID 4625) were recorded for the **bstevens** account.
 
-The EventCode 4625 represents failed login attempts. Below is a detailed view of the event count:
+These events occurred almost simultaneously, indicating a **brute force attack**, where multiple login attempts with incorrect credentials were made in rapid succession.
 
-EventCode: 4625 (Login failed)
-Count: 22 failed login attempts
-Account: bstevens
-Screenshot of the Search Results
-The screenshot above shows the Event ID 4625 results in Splunk, with a total of 22 failed login attempts for the bstevens account
+## Event Details
 
-Event ID 4625: Represents a failed login attempt in Windows security logs.
-Account Name: bstevens — The user account targeted by the brute force attack.
-Host: The attack was attempted on the Target-PC.
-The spike in failed login events is characteristic of a brute force attack, where an attacker tries different password combinations to gain unauthorized access.
+- **EventCode:** 4625 (Login failed)  
+- **Count:** 22 failed login attempts  
+- **Account:** bstevens  
 
-By analyzing Event ID 4625 in Splunk, I was able to successfully detect a brute force attack targeting the bstevens account. This demonstrates the effectiveness of log monitoring for detecting malicious activities. Setting up alerts for patterns like multiple failed logins in a short timeframe can significantly enhance the security monitoring capabilities of a system.
+### Screenshot of the Search Results
 
-## Detecting Successful Brute Force Attack Using Splunk
+The screenshot above shows the Event ID 4625 results in Splunk, with a total of **22 failed login attempts** for the **bstevens** account.
 
-After monitoring the failed login attempts with **Event ID 4625**, I also detected a successful login event that resulted from the brute force attack. This event is represented by **Event ID 4624** (Successful Logon), which indicates a successful login to the **Target-PC** using the **bstevens** account from the Kali Linux machine.
+### Breakdown of Event ID 4625
+
+- **Event ID 4625:** Represents a failed login attempt in Windows security logs.  
+- **Account Name:** bstevens — The user account targeted by the brute force attack.  
+- **Host:** The attack was attempted on the **Target-PC**.  
+
+The spike in failed login events is characteristic of a **brute force attack**, where an attacker tries different password combinations to gain unauthorized access.
+
+## Analysis
+
+By analyzing **Event ID 4625** in Splunk, I was able to successfully detect a **brute force attack** targeting the **bstevens** account. This demonstrates the effectiveness of **log monitoring** for detecting malicious activities.
+
+Setting up alerts for patterns like **multiple failed logins** in a short timeframe can significantly enhance the security monitoring capabilities of a system.
+
+## Event ID 4624
 
 ![16](https://github.com/user-attachments/assets/76d1a047-3a38-46de-a3a9-34454a84f52b)
 
-Key Findings
-Event ID 4624: Indicates a successful login attempt.
-Source IP: The source of the login came from the Kali Linux machine with the IP address 192.168.10.250.
-Account Name: The login was for the user bstevens on the Target-PC.
-EventCode: 4624 (Logon Success)
-Keywords: Audit Success — This shows that the authentication was successful, confirming that the brute force attack succeeded.
-Screenshot of the Search Results
-The screenshot above shows the Event ID 4624 results in Splunk, confirming that the bstevens account was successfully accessed from the Kali Linux machine:
+# Key Findings
 
-Event ID 4624: Represents a successful login in Windows security logs.
-Account Name: bstevens — The account that was targeted and successfully compromised in the brute force attack.
-Source IP Address: 192.168.10.250, which corresponds to the Kali Linux machine used in the brute force attack.
+**Event ID 4624:** Indicates a successful login attempt.
+
+- **Source IP:** The login originated from the **Kali Linux machine** with the IP address **192.168.10.250**.
+- **Account Name:** The login was for the user **bstevens** on the **Target-PC**.
+- **EventCode:** 4624 (Logon Success)  
+- **Keywords:** Audit Success — This indicates that the authentication was successful, confirming the **brute force attack** succeeded.
+
+## Screenshot of the Search Results
+
+The screenshot above shows the **Event ID 4624** results in Splunk, confirming that the **bstevens** account was successfully accessed from the **Kali Linux machine**.
+
+## Breakdown of Event ID 4624 (Successful Attempt)
+
+- **Event ID 4624:** Represents a successful login in Windows security logs.  
+- **Account Name:** bstevens — The account that was targeted and successfully compromised in the brute force attack.  
+- **Source IP Address:** 192.168.10.250, which corresponds to the Kali Linux machine used in the brute force attack.  
+
 The successful login following the failed attempts confirms the brute force attack’s success.
 
-By analyzing Event ID 4624 in Splunk, I was able to confirm that the brute force attack against the bstevens account was successful. The login attempt originated from the Kali Linux machine, demonstrating the effectiveness of monitoring logon success and failure events to detect potential security breaches.
+## Analysis
+
+By analyzing **Event ID 4624** in Splunk, I was able to confirm that the **brute force attack** against the **bstevens** account was successful. The login attempt originated from the **Kali Linux machine**, demonstrating the effectiveness of monitoring **logon success and failure events** to detect potential security breaches.
+
+
 
 ## Conclusion
 
