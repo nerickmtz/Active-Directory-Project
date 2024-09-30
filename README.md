@@ -3,6 +3,13 @@
 ## Objective
 The goal of this project was to set up a detection lab to simulate a realistic network environment that would be used to analyze and detect cyber attacks. Using the **Splunk** Security Information and Event Management (SIEM) system, logs were ingested from key components, and realistic attack scenarios were generated for testing. 
 
+## Disclaimer
+
+The brute force attack documented in this project, using Crowbar, is intended **solely for educational purposes**. It demonstrates cybersecurity concepts and should only be performed in **controlled, authorized environments**. 
+
+**Do not** attempt to replicate this attack in any unauthorized systems or networks. Unauthorized access or tampering with systems without explicit permission is illegal and unethical.
+
+
 ## Network Overview
 
 Below is a diagram of the detection lab setup:
